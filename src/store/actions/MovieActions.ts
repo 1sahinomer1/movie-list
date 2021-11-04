@@ -16,3 +16,10 @@ export const getMovie =
       dispatch({ type: "GET_MOVIE_ERROR" });
     }
   };
+
+export const addFavorite = (id: string) => (dispatch: MovieDispatch) => {
+  dispatch({ type: "ADD_FAVORITE", payload: id });
+};
+export const removeFavorite = (id: string) => (dispatch: MovieDispatch) => {
+  dispatch({ type: "REMOVE_FAVORITE", payload: id });
+};

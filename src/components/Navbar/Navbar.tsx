@@ -1,8 +1,21 @@
 import { Input } from "components";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { getMovie } from "store/actions/MovieActions";
 
 import * as S from "./styles";
 
 const Navbar = () => {
+  const [search, setSearch] = useState<string>("");
+  const dispatch = useDispatch();
+
+  const handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
+    if (search?.length > 3) {
+      dispatch(getMovie(e.currentTarget.value));
+    }
+    setSearch(e.currentTarget.value);
+  };
   return (
     <S.Container>
       <S.WelcomeText>
@@ -14,8 +27,10 @@ const Navbar = () => {
           <S.Text>You can search for the movie you want and like it!</S.Text>
         </S.Section>
       </S.WelcomeText>
-      <Input placeholder={"Search"} />
-      <S.Favorite>Favladıklarım</S.Favorite>
+      <Input placeholder={"Search"} value={search} onChange={handleSearch} />
+      <S.Favorite>
+        <Link to="/favorite">My favorites</Link>
+      </S.Favorite>
     </S.Container>
   );
 };

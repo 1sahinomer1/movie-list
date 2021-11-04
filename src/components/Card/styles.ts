@@ -1,3 +1,4 @@
+import { Star } from "components/Icons";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -12,7 +13,7 @@ export const Container = styled.div`
     rgba(17, 17, 25, 0.24) 75.31%,
     rgba(18, 18, 24, 0) 100%
   );
-  min-height: 600px;
+  min-height: 500px;
   position: relative;
 `;
 
@@ -38,26 +39,16 @@ export const MovieButtons = styled.div`
 `;
 export const IconContainer = styled.div`
   padding: 10px;
-  backdrop-filter: blur(6px);
-  border: 1px solid #a0a0a0;
+  backdrop-filter: blur(1px);
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-export const WatchedContainer = styled(IconContainer)`
+
+export const StyledStar = styled(Star)`
+  margin: 20px;
   cursor: pointer;
-  :hover {
-    background: red;
-  }
-`;
-export const FavContainer = styled(IconContainer)`
-  cursor: pointer;
-  :hover {
-    background: green;
-  }
-`;
-export const StarText = styled.p`
-  font-weight: 600;
-  color: white;
-  margin-left: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
 `;

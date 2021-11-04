@@ -29,6 +29,22 @@ const movieReducer = (
         loading: false,
         error: "There was a problem pulling data.",
       };
+    case "ADD_FAVORITE":
+      return {
+        ...state,
+        data: state.data.find(
+          (movie) =>
+            movie.imdbID === action.payload && movie.isFavorite === true
+        ),
+      };
+    case "REMOVE_FAVORITE":
+      return {
+        ...state,
+        data: state.data.find(
+          (movie) =>
+            movie.imdbID === action.payload && movie.isFavorite === false
+        ),
+      };
     default:
       return state;
   }

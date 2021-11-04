@@ -6,6 +6,7 @@ export interface Movie {
   Type: string;
   Year: string;
   imdbID: string;
+  isFavorite?: boolean;
 }
 export interface MovieState {
   data: Movie[];
@@ -27,5 +28,19 @@ interface GET_MOVIE_SUCCESS {
 interface GET_MOVIE_ERROR {
   type: "GET_MOVIE_ERROR";
 }
-export type MovieAction = GET_MOVIE_START | GET_MOVIE_SUCCESS | GET_MOVIE_ERROR;
+interface ADD_FAVORITE {
+  type: "ADD_FAVORITE";
+  payload: string;
+}
+interface REMOVE_FAVORITE {
+  type: "REMOVE_FAVORITE";
+  payload: string;
+}
+export type MovieAction =
+  | GET_MOVIE_START
+  | GET_MOVIE_SUCCESS
+  | GET_MOVIE_ERROR
+  | ADD_FAVORITE
+  | REMOVE_FAVORITE;
+
 export type MovieDispatch = ThunkDispatch<MovieState, any, MovieAction>;
