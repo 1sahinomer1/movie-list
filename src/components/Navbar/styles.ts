@@ -8,10 +8,12 @@ export const Container = styled.div`
   padding-top: 20px;
   margin-bottom: 100px;
 `;
+
 export const WelcomeText = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const Section = styled.div`
   display: flex;
 `;
@@ -28,11 +30,18 @@ export const Title = styled.p`
   font-weight: 300;
   font-size: 24px;
 `;
+
 export const Text = styled.p`
   font-weight: 500;
   font-size: 14px;
   color: #a0a0a0;
 `;
+
+export const FavoriteText = styled.p`
+  color: white;
+  cursor: pointer;
+`;
+
 export const Favorite = styled.p`
   color: white;
 `;

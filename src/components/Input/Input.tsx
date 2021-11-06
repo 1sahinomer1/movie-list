@@ -1,5 +1,7 @@
 import { Microphone, Search } from "components/Icons";
+
 import * as S from "./styles";
+
 const Input = ({ ...props }) => {
   return (
     <S.InputContainer>

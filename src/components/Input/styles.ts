@@ -12,17 +12,20 @@ export const InputContainer = styled.div`
   min-width: 500px;
   border: 1px solid;
 `;
+
 export const Input = styled.input`
-  width: 70%;
+  width: 300px;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
+  margin-left: 20px;
   color: white;
   ::placeholder {
     color: #a0a0a0;
   }
 `;
+
 export const Line = styled.div`
   width: 30px;
   height: 0px;
@@ -30,6 +33,7 @@ export const Line = styled.div`
   transform: rotate(90deg);
   opacity: 0.3;
 `;
+
 export const Section = styled.div`
   display: flex;
   justify-content: space-between;

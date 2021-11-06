@@ -1,7 +1,8 @@
 import { Input } from "components";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import { getMovie } from "store/actions/MovieActions";
 
 import * as S from "./styles";
@@ -29,7 +30,7 @@ const Navbar = () => {
       </S.WelcomeText>
       <Input placeholder={"Search"} value={search} onChange={handleSearch} />
       <S.Favorite>
-        <Link to="/favorite">My favorites</Link>
+        <Link to="/favorites">My favorites</Link>
       </S.Favorite>
     </S.Container>
   );
