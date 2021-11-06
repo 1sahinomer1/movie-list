@@ -1,4 +1,9 @@
+import { useDispatch } from "react-redux";
+
+import { addFavorite, removeFavorite } from "store/actions/MovieActions";
+
 import { Movie } from "types/movies";
+
 import * as S from "./styles";
 
 interface cardTypes {
@@ -6,6 +11,8 @@ interface cardTypes {
 }
 
 const Card = ({ movie }: cardTypes) => {
+  const dispatch = useDispatch();
+
   return (
     <S.Container>
       <S.ImageContainer src={movie.Poster} />
@@ -13,7 +20,11 @@ const Card = ({ movie }: cardTypes) => {
         <S.Title>{movie.Title}</S.Title>
         <S.Title>{movie.Year}</S.Title>
       </S.MovieDetail>
-      <S.StyledStar />
+      {movie.isFavorite === undefined || movie.isFavorite === false ? (
+        <S.StyledStar onClick={() => dispatch(addFavorite(movie))} />
+      ) : (
+        <S.StyledActiveStar onClick={() => dispatch(removeFavorite(movie))} />
+      )}
     </S.Container>
   );
 };

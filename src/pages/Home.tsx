@@ -1,27 +1,30 @@
-import { Card, Navbar } from "components";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AppState } from "store";
-import { getMovie } from "store/actions/MovieActions";
+import { useSelector } from "react-redux";
 
-import * as S from "styles/pages/Home";
+import { Card, Navbar } from "components";
+import { AppState } from "store";
+
 import { Movie } from "types/movies";
 
+import * as S from "styles/pages/Pages";
+
 const Home = () => {
-  const dispatch = useDispatch();
   const state = useSelector((state: AppState) => state.movies);
   const movies = state.data;
 
-  useEffect(() => {
-    dispatch(getMovie());
-  }, []);
   return (
     <S.Container>
       <Navbar />
-      <S.Text>
-        <S.Bold>Featured</S.Bold>
-        <S.Normal>Movies</S.Normal>
-      </S.Text>
+      {movies?.length > 0 ? (
+        <S.Text>
+          <S.Bold>Featured</S.Bold>
+          <S.Normal>Movies</S.Normal>
+        </S.Text>
+      ) : (
+        <S.NoDataText>
+          <S.Bold>Search a movie!</S.Bold>
+          <S.Normal>i.e. Harry Potter</S.Normal>
+        </S.NoDataText>
+      )}
       <S.CardList>
         {movies?.map((movie: Movie, key: number) => {
           return <Card key={key} movie={movie} />;
