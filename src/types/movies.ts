@@ -13,6 +13,7 @@ export interface MovieState {
   loading: boolean;
   error: string;
   favorites: Movie[];
+  favoriteSearch: string;
 }
 export interface GetMovieState {
   Response: string;
@@ -37,8 +38,8 @@ interface REMOVE_FAVORITE {
   type: "REMOVE_FAVORITE";
   payload: Movie;
 }
-interface FIND_FAVORITE {
-  type: "FIND_FAVORITE";
+interface FAVORITE_SEARCH {
+  type: "FAVORITE_SEARCH";
   payload: string;
 }
 export type MovieAction =
@@ -47,6 +48,6 @@ export type MovieAction =
   | GET_MOVIE_ERROR
   | REMOVE_FAVORITE
   | ADD_FAVORITE
-  | FIND_FAVORITE;
+  | FAVORITE_SEARCH;
 
 export type MovieDispatch = ThunkDispatch<MovieState, any, MovieAction>;

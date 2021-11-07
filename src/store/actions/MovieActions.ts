@@ -25,6 +25,6 @@ export const removeFavorite = (Movie: Movie) => (dispatch: MovieDispatch) => {
   dispatch({ type: "REMOVE_FAVORITE", payload: Movie });
 };
 
-export const findFavorite = (title: string) => (dispatch: MovieDispatch) => {
-  dispatch({ type: "FIND_FAVORITE", payload: title });
+export const favoriteSearch = (title: string) => (dispatch: MovieDispatch) => {
+  dispatch({ type: "FAVORITE_SEARCH", payload: title });
 };

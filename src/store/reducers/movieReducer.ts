@@ -4,6 +4,7 @@ const defaultState: MovieState = {
   data: [],
   loading: false,
   error: "",
+  favoriteSearch: "",
   favorites: [],
 };
 
@@ -62,15 +63,11 @@ const movieReducer = (
             : movie
         ),
       };
-    case "FIND_FAVORITE":
+    case "FAVORITE_SEARCH":
       //we filter favorite arrays,
       return {
         ...state,
-        favorites: state.favorites.filter((movie) =>
-          action.payload === ""
-            ? movie
-            : movie.Title.toLowerCase().includes(action.payload.toLowerCase())
-        ),
+        favoriteSearch: action.payload,
       };
     default:
       return state;
