@@ -14,8 +14,9 @@ export const Container = styled.div`
     rgba(17, 17, 25, 0.24) 75.31%,
     rgba(18, 18, 24, 0) 100%
   );
-  min-height: 500px;
+  height: 550px;
   position: relative;
+  border-radius: 10px;
 `;
 
 export const Title = styled.p`
@@ -26,6 +27,7 @@ export const Title = styled.p`
 
 export const ImageContainer = styled.img`
   max-height: 450px;
+  border-radius: 10px;
 `;
 
 export const MovieDetail = styled.div`

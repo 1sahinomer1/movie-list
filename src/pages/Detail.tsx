@@ -1,10 +1,12 @@
-import { Awards, Back, Imdb, Language } from "components/Icons";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 import { AppState } from "store";
 import { getMovieDetail } from "store/actions/MovieActions";
+
+import { Back, Imdb } from "components/Icons";
 
 import * as S from "../styles/pages/Pages";
 
@@ -15,7 +17,6 @@ const Detail = () => {
     (state: AppState) => state.movies.selectedMovie
   );
 
-  console.log(selectedMovie);
   useEffect(() => {
     dispatch(getMovieDetail(id));
   }, []);
@@ -48,12 +49,11 @@ const Detail = () => {
             <S.MovieTag>#{selectedMovie.Genre}</S.MovieTag>
             <S.MovieTag>#{selectedMovie.Runtime}</S.MovieTag>
           </S.TagSection>
-
           <S.SelectedMovieSection>
             <S.StyledAwards />
             {selectedMovie.Awards}.
           </S.SelectedMovieSection>
-          <S.MovieText>{selectedMovie.Plot}</S.MovieText>
+          <S.PlotMovieText>{selectedMovie.Plot}</S.PlotMovieText>
           <S.MovieText>Writer : {selectedMovie.Writer}</S.MovieText>
           <S.MovieText>Actors : {selectedMovie.Actors}</S.MovieText>
         </S.RightSide>

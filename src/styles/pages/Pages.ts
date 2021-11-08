@@ -1,4 +1,4 @@
-import { Awards } from "components/Icons";
+import { Awards, Back } from "components/Icons";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -12,6 +12,7 @@ export const Text = styled.div`
   line-height: 36px;
   color: white;
 `;
+
 export const Bold = styled.p`
   font-weight: 500;
   margin-right: 5px;
@@ -38,7 +39,7 @@ export const NoDataText = styled.div`
 `;
 export const DetailContainer = styled.div`
   width: 80%;
-  padding: 90px;
+  margin: 100px auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -60,6 +61,9 @@ export const LinkContentWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 30px;
+  :hover {
+    color: #f5c518;
+  }
 `;
 export const ImageContainer = styled.img`
   max-height: 450px;
@@ -72,6 +76,7 @@ export const ImdbContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 139px;
+  margin-top: 20px;
 `;
 export const ImdbRatingWrapper = styled.div`
   display: flex;
@@ -116,4 +121,7 @@ export const TagSection = styled.div`
 `;
 export const StyledAwards = styled(Awards)`
   margin-right: 20px;
+`;
+export const PlotMovieText = styled(MovieText)`
+  margin-bottom: 20px;
 `;
