@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { Card, Navbar } from "components";
 import { AppState } from "store";
@@ -6,7 +7,6 @@ import { AppState } from "store";
 import { Movie } from "types/movies";
 
 import * as S from "styles/pages/Pages";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   const movies = useSelector((state: AppState) => state.movies.data);

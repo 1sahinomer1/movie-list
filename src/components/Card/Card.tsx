@@ -21,9 +21,19 @@ const Card = ({ movie }: cardTypes) => {
         <S.Title>{movie.Year}</S.Title>
       </S.MovieDetail>
       {movie.isFavorite === undefined || movie.isFavorite === false ? (
-        <S.StyledStar onClick={() => dispatch(addFavorite(movie))} />
+        <S.StyledStar
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(addFavorite(movie));
+          }}
+        />
       ) : (
-        <S.StyledActiveStar onClick={() => dispatch(removeFavorite(movie))} />
+        <S.StyledActiveStar
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(removeFavorite(movie));
+          }}
+        />
       )}
     </S.Container>
   );
