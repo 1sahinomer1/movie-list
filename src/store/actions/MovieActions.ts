@@ -1,6 +1,11 @@
 import axios from "axios";
 
-import { GetMovieState, Movie, MovieDispatch } from "types/movies";
+import {
+  GetMovieState,
+  Movie,
+  MovieDispatch,
+  SelectedMovie,
+} from "types/movies";
 
 const API_KEY = "b7edb55e"; //OMDB API KEY
 
@@ -12,6 +17,18 @@ export const getMovie =
         `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchValue}`
       );
       dispatch({ type: "GET_MOVIE_SUCCESS", payload: response.data.Search });
+    } catch (error) {
+      dispatch({ type: "GET_MOVIE_ERROR" });
+    }
+  };
+
+export const getMovieDetail =
+  (id: string) => async (dispatch: MovieDispatch) => {
+    try {
+      const response = await axios.get<SelectedMovie>(
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
+      );
+      dispatch({ type: "GET_MOVIE_DETAIL", payload: response.data });
     } catch (error) {
       dispatch({ type: "GET_MOVIE_ERROR" });
     }

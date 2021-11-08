@@ -1,11 +1,9 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { AppState } from "store";
 
-import { Card, FavoriteNavbar } from "components";
-
+import { Card, Navbar } from "components";
 import { Movie } from "types/movies";
-
-import { Link } from "react-router-dom";
 
 import * as S from "styles/pages/Pages";
 
@@ -20,7 +18,7 @@ const Favorites = () => {
   );
   return (
     <S.Container>
-      <FavoriteNavbar />
+      <Navbar favorite />
       <S.Text>
         <S.Bold>My Favorite</S.Bold>
         <S.Normal>Movies</S.Normal>

@@ -6,7 +6,7 @@ export interface AppState {
   movies: MovieState;
 }
 
-const rootReducer = combineReducers<AppState>({
+const rootReducer = combineReducers({
   movies: movieReducer,
 });
 export default rootReducer;

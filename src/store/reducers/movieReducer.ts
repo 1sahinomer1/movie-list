@@ -1,4 +1,4 @@
-import { MovieAction, MovieState } from "types/movies";
+import { MovieAction, MovieState, SelectedMovie } from "types/movies";
 
 const defaultState: MovieState = {
   data: [],
@@ -6,6 +6,7 @@ const defaultState: MovieState = {
   error: "",
   favoriteSearch: "",
   favorites: [],
+  selectedMovie: {} as SelectedMovie,
 };
 
 const movieReducer = (
@@ -68,6 +69,11 @@ const movieReducer = (
       return {
         ...state,
         favoriteSearch: action.payload,
+      };
+    case "GET_MOVIE_DETAIL":
+      return {
+        ...state,
+        selectedMovie: action.payload,
       };
     default:
       return state;

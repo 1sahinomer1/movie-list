@@ -6,14 +6,14 @@ import { AppState } from "store";
 import { Movie } from "types/movies";
 
 import * as S from "styles/pages/Pages";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const state = useSelector((state: AppState) => state.movies);
-  const movies = state.data;
+  const movies = useSelector((state: AppState) => state.movies.data);
 
   return (
     <S.Container>
-      <Navbar />
+      <Navbar favorite={false} />
       {movies?.length > 0 ? (
         <S.Text>
           <S.Bold>Featured</S.Bold>
@@ -27,7 +27,11 @@ const Home = () => {
       )}
       <S.CardList>
         {movies?.map((movie: Movie, key: number) => {
-          return <Card key={key} movie={movie} />;
+          return (
+            <Link to={`detail/${movie.imdbID}`}>
+              <Card key={key} movie={movie} />
+            </Link>
+          );
         })}
       </S.CardList>
     </S.Container>
