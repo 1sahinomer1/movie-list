@@ -1,12 +1,12 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { Card, Navbar } from "components";
-import { AppState } from "store";
+import { Card, Navbar } from 'components';
+import { AppState } from 'store';
 
-import { Movie } from "types/movies";
+import { Movie } from 'types/movies';
 
-import * as S from "styles/pages/Pages";
+import * as S from 'styles/pages/Pages';
 
 const Home = () => {
   const movies = useSelector((state: AppState) => state.movies.data);

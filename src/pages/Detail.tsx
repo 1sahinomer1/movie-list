@@ -1,14 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-import { AppState } from "store";
-import { getMovieDetail } from "store/actions/MovieActions";
+import { AppState } from 'store';
+import { getMovieDetail } from 'store/actions/MovieActions';
 
-import { Back, Imdb } from "components/Icons";
+import { Back, Imdb } from 'components/Icons';
 
-import * as S from "../styles/pages/Pages";
+import * as S from '../styles/pages/Pages';
 
 const Detail = () => {
   const { id } = useParams<{ id: string }>();

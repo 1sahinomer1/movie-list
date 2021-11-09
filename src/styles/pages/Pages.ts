@@ -1,5 +1,6 @@
-import { Awards, Back } from "components/Icons";
 import styled from "styled-components";
+
+import { Awards } from "components/Icons";
 
 export const Container = styled.div`
   margin: 0 auto;
