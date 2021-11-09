@@ -7,3 +7,4 @@ export { default as Imdb } from "./Imdb";
 export { default as Awards } from "./Awards";
 export { default as Language } from "./Language";
 export { default as Back } from "./Back";
+export { default as Home } from "./Home";
