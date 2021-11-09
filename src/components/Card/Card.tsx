@@ -4,6 +4,7 @@ import { addFavorite, removeFavorite } from "store/actions/MovieActions";
 
 import { Movie } from "types/movies";
 
+import noImage from "utils/noImage.jpg";
 import * as S from "./styles";
 
 interface cardTypes {
@@ -15,7 +16,12 @@ const Card = ({ movie }: cardTypes) => {
 
   return (
     <S.Container>
-      <S.ImageContainer src={movie.Poster} />
+      {movie.Poster === "N/A" ? (
+        <S.ImageContainer src={noImage} />
+      ) : (
+        <S.ImageContainer src={movie.Poster} />
+      )}
+
       <S.MovieDetail>
         <S.Title>{movie.Title}</S.Title>
         <S.Title>{movie.Year}</S.Title>
