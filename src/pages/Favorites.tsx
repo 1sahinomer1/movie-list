@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AppState } from "store";
 
 import { Card, Navbar } from "components";
+
 import { Movie } from "types/movies";
 
 import * as S from "styles/pages/Pages";

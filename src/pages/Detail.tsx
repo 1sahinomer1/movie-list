@@ -12,6 +12,7 @@ import * as S from "../styles/pages/Pages";
 
 const Detail = () => {
   const { id } = useParams<{ id: string }>();
+
   const dispatch = useDispatch();
   const selectedMovie = useSelector(
     (state: AppState) => state.movies.selectedMovie
