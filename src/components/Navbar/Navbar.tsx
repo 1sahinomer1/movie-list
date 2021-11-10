@@ -1,15 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { Input } from "components";
 
 import { favoriteSearch, getMovie } from "store/actions/MovieActions";
+import { AppState } from "store";
 
 import * as S from "./styles";
 
 const Navbar: React.FC<{ favorite: boolean }> = ({ favorite }) => {
   const [search, setSearch] = useState<string>("");
+  const favorites = useSelector((state: AppState) => state.movies.favorites);
   const dispatch = useDispatch();
 
   const handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
@@ -39,10 +41,12 @@ const Navbar: React.FC<{ favorite: boolean }> = ({ favorite }) => {
       {favorite ? (
         <Link to="/">
           <S.FavoriteText>Back to home !</S.FavoriteText>
+          <S.StyledMainIcon />
         </Link>
       ) : (
         <Link to="/favorites">
           <S.FavoriteText>My favorites</S.FavoriteText>
+          {favorites.length > 0 ? <S.StyledActiveStar /> : <S.StyledStar />}
         </Link>
       )}
     </S.Container>

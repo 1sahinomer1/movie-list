@@ -9,10 +9,10 @@ const Input = ({ ...props }) => {
         <Search />
         <S.Input {...props} />
       </S.Section>
-      <S.Section>
+      <S.RightSection>
         <S.Line />
         <Microphone />
-      </S.Section>
+      </S.RightSection>
     </S.InputContainer>
   );
 };
