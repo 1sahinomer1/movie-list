@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Awards } from "components/Icons";
+
 import { breakpoints } from "theme";
 
 export const Container = styled.div`
@@ -13,6 +14,7 @@ export const Text = styled.div`
   font-size: 24px;
   line-height: 36px;
   color: white;
+
   @media ${breakpoints.lg} {
     display: flex;
     justify-content: center;
@@ -32,6 +34,7 @@ export const CardList = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 20px;
+
   @media ${breakpoints.xl} {
     grid-template-columns: auto auto;
   }
@@ -57,6 +60,7 @@ export const DetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
+
   @media ${breakpoints.xl} {
     margin-top: 50px;
   }
@@ -68,12 +72,14 @@ export const LeftSide = styled.div`
   background-color: black;
   box-shadow: 16px 16px 39px 6px rgba(0, 0, 0, 0.25);
   margin-right: 100px;
+
   @media ${breakpoints.xl} {
     width: 100%;
   }
 `;
 export const MovieContainer = styled.div`
   display: flex;
+
   @media ${breakpoints.xl} {
     flex-direction: column;
   }
@@ -83,6 +89,7 @@ export const LinkContentWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 30px;
+
   :hover {
     color: #f5c518;
   }
@@ -119,6 +126,7 @@ export const SelectedMovieSection = styled.div`
   align-items: center;
   color: white;
   margin-bottom: 20px;
+
   @media ${breakpoints.xl} {
     justify-content: center;
   }
@@ -130,6 +138,7 @@ export const MovieText = styled.p`
   color: white;
   padding: 5px;
   border-radius: 10px;
+
   @media ${breakpoints.xl} {
     text-align: center;
   }
@@ -157,6 +166,7 @@ export const MovieTag = styled.span`
   margin-right: 10px;
   border-radius: 10px;
   padding: 5px;
+
   @media ${breakpoints.lg} {
     margin-top: 10px;
   }
@@ -165,6 +175,7 @@ export const TagSection = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+
   @media ${breakpoints.xl} {
     justify-content: center;
   }

@@ -13,6 +13,7 @@ export const InputContainer = styled.div`
   padding: 14px 16px;
   width: 500px;
   border: 1px solid;
+
   @media ${breakpoints.xl} {
     width: 350px;
   }
@@ -35,9 +36,11 @@ export const Input = styled.input`
   line-height: 21px;
   margin-left: 20px;
   color: white;
+
   ::placeholder {
     color: #a0a0a0;
   }
+
   @media ${breakpoints.lg} {
     width: 100px;
   }
@@ -60,6 +63,7 @@ export const RightSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   @media ${breakpoints.xl} {
     display: none;
   }

@@ -1,5 +1,7 @@
-import { ActiveStar, Home, Star } from "components/Icons";
 import styled from "styled-components";
+
+import { ActiveStar, Home, Star } from "components/Icons";
+
 import { breakpoints } from "theme";
 
 export const Container = styled.div`
@@ -9,6 +11,7 @@ export const Container = styled.div`
   flex-direction: row;
   padding-top: 20px;
   margin-bottom: 100px;
+
   @media ${breakpoints.xl} {
     margin-bottom: 50px;
   }
@@ -17,6 +20,7 @@ export const Container = styled.div`
 export const WelcomeText = styled.div`
   display: flex;
   flex-direction: column;
+
   @media ${breakpoints.lg} {
     display: none;
   }
@@ -43,6 +47,7 @@ export const Text = styled.p`
   font-weight: 500;
   font-size: 14px;
   color: #a0a0a0;
+
   @media ${breakpoints.xl} {
     display: none;
   }
@@ -51,6 +56,7 @@ export const Text = styled.p`
 export const FavoriteText = styled.p`
   color: white;
   cursor: pointer;
+
   @media ${breakpoints.xl} {
     display: none;
   }
@@ -61,18 +67,21 @@ export const Favorite = styled.p`
 `;
 export const StyledActiveStar = styled(ActiveStar)`
   display: none;
+
   @media ${breakpoints.xl} {
     display: block;
   }
 `;
 export const StyledMainIcon = styled(Home)`
   display: none;
+
   @media ${breakpoints.xl} {
     display: block;
   }
 `;
 export const StyledStar = styled(Star)`
   display: none;
+
   @media ${breakpoints.xl} {
     display: block;
   }

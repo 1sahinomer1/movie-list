@@ -19,6 +19,7 @@ export const Container = styled.div`
   height: 550px;
   position: relative;
   border-radius: 10px;
+
   @media ${breakpoints.xs} {
     height: 400px;
   }
@@ -33,6 +34,7 @@ export const Title = styled.p`
 export const ImageContainer = styled.img`
   max-height: 450px;
   border-radius: 10px;
+
   @media ${breakpoints.xs} {
     width: 200px;
   }
@@ -66,12 +68,12 @@ export const StyledStar = styled(Star)`
   position: absolute;
   right: 0;
   top: 0;
+
   @media ${breakpoints.lg} {
     margin-right: 40px;
     margin-top: 20px;
   }
   @media ${breakpoints.xs} {
-    margin-right: 40px;
     margin-top: 10px;
   }
 `;
@@ -82,12 +84,12 @@ export const StyledActiveStar = styled(ActiveStar)`
   position: absolute;
   right: 0;
   top: 0;
+
   @media ${breakpoints.lg} {
     margin-right: 40px;
     margin-top: 20px;
   }
   @media ${breakpoints.xs} {
-    margin-right: 40px;
     margin-top: 10px;
   }
 `;
