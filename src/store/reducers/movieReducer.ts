@@ -5,7 +5,7 @@ const defaultState: MovieState = {
   loading: false,
   error: "",
   favoriteSearch: "",
-  favorites: [],
+  favorites: JSON.parse(localStorage.getItem("favorites") || "[]") || [],
   selectedMovie: {} as SelectedMovie,
 };
 
@@ -21,6 +21,14 @@ const movieReducer = (
         error: "",
       };
     case "GET_MOVIE_SUCCESS":
+      //If the searched movie is in my favourites, the movies that are displayed will be favorited.
+      action.payload.forEach((getMovie) =>
+        state.favorites.forEach((favoriteMovie) => {
+          if (getMovie.imdbID === favoriteMovie.imdbID) {
+            getMovie.isFavorite = true;
+          }
+        })
+      );
       return {
         ...state,
         loading: false,

@@ -10,7 +10,8 @@ import {
 const API_KEY = "b7edb55e"; //OMDB API KEY
 
 export const getMovie =
-  (searchValue: string) => async (dispatch: MovieDispatch) => {
+  (searchValue = "harry potter") =>
+  async (dispatch: MovieDispatch) => {
     dispatch({ type: "GET_MOVIE_START" });
     try {
       const response = await axios.get<GetMovieState>(

@@ -1,4 +1,5 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "store";
 
 import { addFavorite, removeFavorite } from "store/actions/MovieActions";
 
@@ -13,6 +14,9 @@ interface cardTypes {
 
 const Card = ({ movie }: cardTypes) => {
   const dispatch = useDispatch();
+  const favorites = useSelector((state: AppState) => state.movies.favorites);
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 
   return (
     <S.Container>

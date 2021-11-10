@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { AppState } from 'store';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { AppState } from "store";
 
-import { Card, Navbar } from 'components';
+import { Card, Navbar } from "components";
 
-import { Movie } from 'types/movies';
+import { Movie } from "types/movies";
 
-import * as S from 'styles/pages/Pages';
+import * as S from "styles/pages/Pages";
 
 const Favorites = () => {
   const favorites = useSelector((state: AppState) => state.movies.favorites);
@@ -14,7 +14,7 @@ const Favorites = () => {
     (state: AppState) => state.movies.favoriteSearch
   );
 
-  const filteredFavorites = favorites.filter(movie =>
+  const filteredFavorites = favorites.filter((movie) =>
     movie.Title.toLowerCase().includes(favoriteSearch.toLowerCase())
   );
   return (
@@ -32,7 +32,7 @@ const Favorites = () => {
               <S.Text>Let's check out the movies!</S.Text>
             </Link>
           </S.NotFavoriteWrapper>
-        ) : favoriteSearch === '' ? (
+        ) : favoriteSearch === "" ? (
           favorites.map((movie: Movie, key: number) => (
             <Card movie={movie} key={key} />
           ))
