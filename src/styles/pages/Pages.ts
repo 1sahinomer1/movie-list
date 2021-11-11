@@ -46,13 +46,7 @@ export const NotFavoriteWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const NoDataText = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-`;
+
 export const DetailContainer = styled.div`
   width: 80%;
   margin: 100px auto;

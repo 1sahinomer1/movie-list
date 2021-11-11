@@ -21,16 +21,11 @@ const Home = () => {
   return (
     <S.Container>
       <Navbar favorite={false} />
-      {movies?.length > 0 ? (
+      {movies?.length > 0 && (
         <S.Text>
           <S.Bold>Featured</S.Bold>
           <S.Normal>Movies</S.Normal>
         </S.Text>
-      ) : (
-        <S.NoDataText>
-          <S.Bold>Search a movie!</S.Bold>
-          <S.Normal>i.e. Harry Potter</S.Normal>
-        </S.NoDataText>
       )}
       <S.CardList>
         {movies?.map((movie: Movie, key: number) => {

@@ -34,7 +34,7 @@ export const Title = styled.p`
 export const ImageContainer = styled.img`
   max-height: 450px;
   border-radius: 10px;
-
+  max-width: 300px;
   @media ${breakpoints.xs} {
     width: 200px;
   }
