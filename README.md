@@ -26,3 +26,7 @@ We'll save it for you and you don't have to do this again.
 - Styled-components for styles
 - Icons for SVGR
 - Axios
+
+## 🏆 Won an award
+
+This project was created for the competition on the <a href="/https://www.youtube.com/channel/UCfSw9Jm29lJHRKU4DmfH0vg">React Dersleri</a>
